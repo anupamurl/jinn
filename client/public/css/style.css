@@ -1,0 +1,652 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0px;
+  padding: 0px;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+body {
+  font-size: 16px;
+  font-family: "Space Mono";
+  font-weight: normal;
+}
+
+/* login page */
+.login_main_div {
+  background-color: #242426;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.login_img {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.login_inner_div {
+  max-width: 390px;
+  margin: auto;
+  min-width: 340px;
+}
+.form_input_div input {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px 15px;
+  width: 100%;
+  color: white;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Space Mono";
+  
+}
+.form_input_div input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.form_input_div input::placeholder {
+  text-align: center;
+  color: #fff;
+}
+
+.main_index_div {
+  display: flex;
+  background-color: #242426;
+  height: 100%;
+}
+body {
+  background-color: #242426;
+}
+.first_div {
+  min-width: 318px;
+  max-width: 318px;
+}
+.second_div {
+  min-width: 455px;
+  max-width: 455px;
+}
+.page1 .second_div {
+  min-width: 320px;
+  max-width: 320px;
+}
+.page3 .second_div {
+  min-width: 404px;
+  max-width: 404px;
+}
+
+.thid_div {
+  min-width: 370px;
+  max-width: 370px;
+}
+.fourth_div {
+  min-width: 330px;
+  max-width: 330px;
+}
+.fifth_div {
+  min-width: 330px;
+  max-width: 330px;
+}
+.page1 .fifth_div {
+  min-width: 415px;
+  max-width: 415px;
+}
+.sixth_div {
+  min-width: 330px;
+  max-width: 330px;
+}
+.page1 .sixth_div {
+  min-width: 405px;
+  max-width: 405px;
+}
+.seventh_div {
+  min-width: 330px;
+  max-width: 330px;
+}
+.page1 .seventh_div {
+  min-width: 390px;
+  max-width: 390px;
+}
+.page3 .seventh_div {
+  min-width: 260px;
+  max-width: 260px;
+}
+.eighth_div {
+  min-width: 550px;
+  max-width: 550px;
+}
+.form_input_div {
+  margin-bottom: 20px;
+}
+.form_button button {
+  background: rgba(0, 0, 0, 0.32);
+  color: white;
+  width: 100%;
+  border: none;
+  padding: 15px 10px;
+  font-size: 16px;
+  font-family: "Space Mono";
+}
+
+.form_button button:hover{cursor: pointer;}
+
+.single_index_div {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.collapse:not(.show) {
+  display: none;
+}
+.upload_button input[type="file"],
+.upload_button input[type="date"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 115px;
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+  cursor: pointer;
+}
+.accordion-button {
+  background-color: transparent;
+}
+.light_color_white {
+  color: rgb(255 255 255 / 50%);
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: none;
+  content: "-";
+  transform: none;
+}
+.accordion-button::after {
+  content: "+";
+  font-size: 20px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.heading_color {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+}
+.index_heading_div {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  height: 45px;
+  align-items: center;
+}
+.input_upload_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  background: #2e2e2e;
+}
+.accordion-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.index_desc_div {
+  padding: 20px;
+}
+.accordion-button {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.accordion-body {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+}
+.accordion .accordion-item:first-of-type .accordion-button {
+  padding-top: 0px;
+}
+.pb-10 {
+  padding-bottom: 10px;
+}
+.font-16 {
+  font-size: 16px;
+}
+.remove_line,
+.remove_line:hover {
+  font-size: 16px;
+  text-decoration: none;
+  color: rgb(255 255 255 / 50%);
+}
+.fix_footer_button,
+.fix_footer_button:hover {
+  background-color: #2e2e2e;
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+}
+.font-60 {
+  font-size: 60px;
+  color: white;
+  line-height: 50px;
+}
+.all_uesr_text {
+  display: flex;
+  justify-content: space-between;
+}
+.button_div {
+  width: 100%;
+}
+.sixth_div .accordion-button {
+  position: relative;
+}
+
+.sixth_div .accordion-button:after,
+.ninth_div .accordion-button:after {
+  top: 0px;
+  position: absolute;
+  right: 0px;
+}
+.sixth_div .accordion-item:not(:first-of-type) .accordion-button:after,
+.ninth_div .accordion-item:not(:first-of-type) .accordion-button:after {
+  top: 15px;
+}
+.edit_user_main_div {
+  display: flex;
+  justify-content: space-between;
+}
+.edit_user_div,
+.edit_user_div {
+  background-color: #2e2e2e;
+  padding: 5px 15px;
+  margin-left: 5px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px !important;
+  font-family: "Space Mono";
+  font-weight: bold;
+  border-radius: 5px;
+}
+.font-14 {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.font-32 {
+  font-size: 32px;
+  color: white;
+}
+.follower_main_div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
+}
+.font-100 {
+  font-size: 100px;
+  line-height: 100px;
+}
+.lead_main_div {
+  max-width: 250px;
+  margin: auto;
+  text-align: center;
+}
+.lead_number {
+  margin: 80px 0px 80px;
+}
+.index_ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+}
+.ninth_div {
+  min-width: 280px;
+  max-width: 280px;
+}
+.tenth_div {
+  max-width: 790px;
+  min-width: 790px;
+}
+.index_table {
+  width: 100%;
+}
+.index_table thead td:not(:first-child),
+.index_table tbody tr td:not(:first-child) {
+  text-align: end;
+}
+.index_table thead td:last-child,
+.index_table thead td:nth-last-child(2) {
+  width: 130px;
+}
+.index_table tbody tr td,
+.index_table thead td {
+  padding-bottom: 15px;
+}
+.orange_dot {
+  height: 5px;
+  width: 5px;
+  border-radius: 100%;
+  display: inline-block;
+  background-color: #ff7a00;
+  margin-left: 10px;
+}
+.ninth_ul li {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  width: 23px;
+  height: 11px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #0f0e0e;
+  outline: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: inset 0 0 5px rgb(0 0 0 / 50%);
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: translateX(100%);
+  background: #fff;
+}
+
+input[type="checkbox"]:checked {
+  background: #0f0e0e;
+}
+.time_filter {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0px;
+}
+.logout_button,
+.logout_button:hover {
+  background-color: #0e0e0e;
+}
+#select_box {
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+}
+#select_box option {
+  background-color: #181818;
+  padding: 8px;
+  border: none;
+}
+option:hover {
+  background-color: yellow;
+}
+#select_box:focus,
+#select_box:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+.orange_circle {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  background-color: #ff7a00;
+  border-radius: 100%;
+}
+.first_ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+/* custome select box */
+.custom-select {
+  position: relative;
+  padding: 0px 6px;
+}
+
+.custom-select select {
+  display: none;
+}
+
+.select-selected {
+  background-color: #242426;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: url("../image/down_arrow.svg");
+  top: 8px;
+  right: 45px;
+  width: 0;
+  height: 0;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 8px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+  color: rgb(255 255 255 / 50%);
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: #242426;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.select-items div {
+  padding: 10px 45px;
+}
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* custome scroll bar */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2e2e2e;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  background: #2e2e2e;
+  border-radius: 10px;
+}
+.first_div .index_desc_div,
+.sixth_div .index_desc_div {
+  height: calc(100% - 50px);
+  overflow: auto;
+  margin-bottom: 10px;
+}
+.page1 .first_div .index_desc_div,
+.page1 .sixth_div .index_desc_div {
+  height: calc(100% - 100px);
+  overflow: auto;
+  margin-bottom: 10px;
+}
+.fourth_div .index_desc_div {
+  height: calc(100% - 50px);
+  overflow: auto;
+  margin-bottom: 10px;
+}
+.page1 .fourth_div .index_desc_div {
+  height: calc(100% - 200px);
+  overflow: auto;
+  margin-bottom: 10px;
+}
+.ninth_div .index_desc_div {
+  height: calc(100% - 150px);
+  overflow: auto;
+  margin-bottom: 10px;
+}
+.index_desc_div {
+  height: calc(100% - 50px);
+  overflow: auto;
+}
+.single_index_div {
+  position: relative;
+  height: 100vh;
+}
+.fix_text_div {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: #242426;
+}
+.custometexteditor{background-color: #242426; border: 0px; width: 100%;color: #fff;}
+.custometexteditor:focus{outline: 0px;}
+.digitdownload{padding-right: 5px;}
+.custcsssevandiv{padding: 0px;}
+.custcsssevandiv div{padding: 15px 20px;}
+.custcsssevandiv div:hover{background: rgba(255, 255, 255, 0.05); cursor: pointer;}
+.custcsssevandiv div h3{padding-top: 5px;}
+.Custplay .ninth_ul{border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 20px 20px 5px;}
+.custcheckmark{padding-bottom: 20px;}
+.custcheckmark li{list-style: none; padding: 8px 20px;}
+.downloaddigi img{margin-top: -3px;}
+.mb-20{margin-bottom: 20px;}
+.ind3last ul li{padding-bottom: 0px;}
+.custchangecolle .accordion-item{border: 0px;}
+.collacust p.text-white{margin-bottom: 15px;}
+.collacust .accordion-button {
+  padding: 3px 0px;}
+  .sndppad{margin-top: 30px;}
+  .collacust  .description p{margin-top: 20px;}
+  .custindexdesc{padding: 0px;}
+  .custindexdesc .textblock{padding: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);}
+  .custindexdesc .textblock:nth-last-child(1){border: 0px;}
+  .custindexdesc .mb-20{margin-bottom: 15px;}
+
+.custcheck {
+  display: block;
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.custcheck input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+/* On mouse-over, add a grey background color */
+.custcheck:hover input ~ .checkmark {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* When the checkbox is checked, add a blue background */
+.custcheck input:checked ~ .checkmark {
+  background: rgba(255, 255, 255, 0.05);
+  
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.custcheck input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.custcheck .checkmark:after {
+  left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0px 1px 1px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+
+}
+
+
+
+
+
+
+
