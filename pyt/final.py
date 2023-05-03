@@ -46,9 +46,9 @@ with open('keyword.txt') as f:
         jobs.append(job)
         driver.get('https://www.linkedin.com')
         driver.find_element_by_pro('xcoJPARJg9creFi').click_pro()
-        driver.find_element_by_pro('ISw3KbGf_HX0PLb').type('8595704389')
+        driver.find_element_by_pro('ISw3KbGf_HX0PLb').type('mailsofmanisha@yahoo.com')
         driver.switch_to.active_element.type('Tab')
-        driver.find_element_by_pro('bWpxjgudeyUVu7V').type('Payal@209')    
+        driver.find_element_by_pro('bWpxjgudeyUVu7V').type('Anupam@294')    
         driver.switch_to.active_element.type('Enter') 
         for obj in jobs:
             driver.get(obj['link']) 
@@ -65,7 +65,36 @@ with open('keyword.txt') as f:
              for li in li_elements:
                li_texts.append(li.get_text())            
             obj['cinfo']  = li_texts 
- 
+            obj['companylink'] = "https://www.linkedin.com"+obj['companylink'].replace('/life', '')
+            obj['companyabout'] =   obj['companylink']+"about"
+            obj['companyceo'] =    obj['companylink']+"people/?keywords=ceo"
+            driver.get(obj['companyabout']) 
+            element = WebDriverWait(driver, 10).until(
+                      EC.presence_of_element_located((By.CLASS_NAME, "application-outlet"))
+            ) 
+            aboutsrc  = driver.find_element_by_class_name('application-outlet').get_attribute('innerHTML')   
+            aboutsoup = BeautifulSoup(aboutsrc, 'html.parser')   
+            srcfile =  aboutsoup.find('section', {'class': 'artdeco-card p5 artdeco-card mb4'})
+            first_inner_p = srcfile.find('p')
+            if first_inner_p is not None:
+              obj['aboutcompany'] = first_inner_p.getText()
+            else:
+             obj['aboutcompany'] = "No Data Found"
+            info = srcfile.find("dl" )
+
+            comp_info  = {}
+            cleaned_id_text = []
+            for i in info.find_all('dt'):
+                cleaned_id_text.append(i.text.strip())
+            cleaned_id__attrb_text = []
+            for i in info.find_all('dd'):
+                cleaned_id__attrb_text.append(i.text.strip())
+
+            comp_info['Id'] = cleaned_id_text
+            comp_info['Attribute'] = cleaned_id__attrb_text
+          
+            obj['companyattr'] = comp_info
+
 
     print(jobs) 
     with open("jobwithlink.txt",'w') as f: 
