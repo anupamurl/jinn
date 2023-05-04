@@ -1,0 +1,521 @@
+<ul class="display-flex list-style-none flex-wrap">
+    <!---->
+    <!---->
+    <li class="grid grid__col--lg-8 block
+              pt5 pr4 m0">
+        <div>
+
+            <section id="ember177" class="artdeco-card artdeco-card--with-hover ember-view full-width org-people-profile-card">
+                <!---->
+
+                <img width="210" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" ariarole="presentation" loading="lazy" height="210" alt="" id="ember178" class="evi-image lazy-image ghost-default ember-view org-people-profile-card__cover-photo org-people-profile-card__cover-photo--people">
+
+                <div class="org-people-profile-card__profile-info">
+                    <div id="ember179" class="artdeco-entity-lockup artdeco-entity-lockup--stacked-center artdeco-entity-lockup--size-7 ember-view">
+                        <div id="ember180" class="artdeco-entity-lockup__image artdeco-entity-lockup__image--type-circle ember-view" type="circle">
+
+                            <a class="app-aware-link " href="https://www.linkedin.com/in/toddrmorris?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACS4_oBY_Hfka6tDHj_CeON9GnaaWW4xRc" data-test-app-aware-link="">
+                                <img width="104" src="https://media.licdn.com/dms/image/C5603AQFmJRU3xROkwg/profile-displayphoto-shrink_200_200/0/1638973296910?e=1688601600&amp;v=beta&amp;t=nt6t5e7P4lp-odMLMaM_2eJ6pEhX9fV042vNFZEA0HM" loading="lazy" height="104" alt="Todd Morris’ profile picture"
+                                    id="ember181" class="evi-image lazy-image ember-view">
+                            </a>
+
+
+                        </div>
+                        <div id="ember182" class="artdeco-entity-lockup__content ember-view">
+                            <div id="ember183" class="artdeco-entity-lockup__title ember-view">
+                                <a class="app-aware-link  link-without-visited-state" aria-label="View Todd Morris’ profile" href="https://www.linkedin.com/in/toddrmorris?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACS4_oBY_Hfka6tDHj_CeON9GnaaWW4xRc" data-test-app-aware-link="">
+                                    <div id="ember184" style="" class="ember-view lt-line-clamp lt-line-clamp--single-line org-people-profile-card__profile-title t-black">
+                                        Todd Morris
+
+                                        <!---->
+                                    </div>
+
+                                </a>
+
+                            </div>
+                            <div id="ember185" class="artdeco-entity-lockup__badge ember-view"> <span class="a11y-text">3rd+ degree connection</span>
+                                <span class="artdeco-entity-lockup__degree" aria-hidden="true">
+    ·&nbsp;3rd
+  </span>
+                                <!---->
+                                <!---->
+                            </div>
+                            <div id="ember186" class="artdeco-entity-lockup__subtitle ember-view">
+                                <div class="t-14 t-black--light t-normal">
+                                    <div id="ember187" style="-webkit-line-clamp: 2" class="ember-view lt-line-clamp lt-line-clamp--multi-line">
+                                        Chief Executive Officer
+
+                                        <!---->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="ember188" class="artdeco-entity-lockup__caption ember-view"></div>
+                        </div>
+
+                    </div>
+                    <span class="text-align-center">
+            <span id="ember189" style="-webkit-line-clamp: 3" class="ember-view lt-line-clamp lt-line-clamp--multi-line t-12 t-black--light mt2">
+      <span class="lt-line-clamp__raw-line"></span>
+
+                    <!---->
+                    </span>
+
+                    </span>
+                </div>
+
+                <footer class="ph3 pb3">
+
+                    <div class="entry-point">
+                        <div></div>
+
+
+                        <button aria-label="Message Todd Morris" id="ember190" class="artdeco-button artdeco-button--2 artdeco-button--secondary ember-view full-width"><!---->
+<span class="artdeco-button__text">
+    Message
+</span></button>
+
+                    </div>
+                </footer>
+            </section>
+
+        </div>
+
+    </li>
+    <!---->
+    <li class="grid grid__col--lg-8 block
+              pt5 pr4 m0">
+        <div>
+
+            <section id="ember191" class="artdeco-card artdeco-card--with-hover ember-view full-width org-people-profile-card">
+                <!---->
+
+                <img width="210" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" ariarole="presentation" loading="lazy" height="210" alt="" id="ember192" class="evi-image lazy-image ghost-default ember-view org-people-profile-card__cover-photo org-people-profile-card__cover-photo--people">
+
+                <div class="org-people-profile-card__profile-info">
+                    <div id="ember193" class="artdeco-entity-lockup artdeco-entity-lockup--stacked-center artdeco-entity-lockup--size-7 ember-view">
+                        <div id="ember194" class="artdeco-entity-lockup__image artdeco-entity-lockup__image--type-circle ember-view" type="circle">
+
+                            <a class="app-aware-link " href="https://www.linkedin.com/in/eli-hammerman?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAWDquIB27sapvJ7fgbDXuxVB8V3_Zl-tRs" data-test-app-aware-link="">
+                                <img width="104" src="https://media.licdn.com/dms/image/C4D03AQEuM1XCXDgZzg/profile-displayphoto-shrink_200_200/0/1638930424826?e=1688601600&amp;v=beta&amp;t=fy-5Wi4lb4MRgYMq0duiCq2QXZQZdQ7xFRzhIL1Hfus" loading="lazy" height="104" alt="Eli Hammerman’s profile picture"
+                                    id="ember195" class="evi-image lazy-image ember-view">
+                            </a>
+
+
+                        </div>
+                        <div id="ember196" class="artdeco-entity-lockup__content ember-view">
+                            <div id="ember197" class="artdeco-entity-lockup__title ember-view">
+                                <a class="app-aware-link  link-without-visited-state" aria-label="View Eli Hammerman’s profile" href="https://www.linkedin.com/in/eli-hammerman?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAWDquIB27sapvJ7fgbDXuxVB8V3_Zl-tRs" data-test-app-aware-link="">
+                                    <div id="ember198" style="" class="ember-view lt-line-clamp lt-line-clamp--single-line org-people-profile-card__profile-title t-black">
+                                        Eli Hammerman
+
+                                        <!---->
+                                    </div>
+
+                                </a>
+
+                            </div>
+                            <div id="ember199" class="artdeco-entity-lockup__badge ember-view"> <span class="a11y-text">2nd degree connection</span>
+                                <span class="artdeco-entity-lockup__degree" aria-hidden="true">
+    ·&nbsp;2nd
+  </span>
+                                <!---->
+                                <!---->
+                            </div>
+                            <div id="ember200" class="artdeco-entity-lockup__subtitle ember-view">
+                                <div class="t-14 t-black--light t-normal">
+                                    <div id="ember201" style="-webkit-line-clamp: 2" class="ember-view lt-line-clamp lt-line-clamp--multi-line">
+                                        Chief Growth Officer
+
+                                        <!---->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="ember202" class="artdeco-entity-lockup__caption ember-view"></div>
+                        </div>
+
+                    </div>
+                    <span class="text-align-center">
+            <span id="ember203" style="-webkit-line-clamp: 3" class="ember-view lt-line-clamp lt-line-clamp--multi-line t-12 t-black--light mt2">
+      Charles Miller is a mutual connection
+
+<!---->  </span>
+
+                    </span>
+                </div>
+
+                <footer class="ph3 pb3">
+                    <button aria-label="Connect Eli Hammerman" id="ember204" class="artdeco-button artdeco-button--2 artdeco-button--secondary ember-view full-width" type="button"><!---->
+<span class="artdeco-button__text">
+    Connect
+</span></button>
+                </footer>
+            </section>
+
+        </div>
+
+    </li>
+    <!---->
+    <li class="grid grid__col--lg-8 block
+              pt5 pr4 m0">
+        <div>
+
+            <section id="ember205" class="artdeco-card artdeco-card--with-hover ember-view full-width org-people-profile-card">
+                <!---->
+
+                <img width="210" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" ariarole="presentation" loading="lazy" height="210" alt="" id="ember206" class="evi-image lazy-image ghost-default ember-view org-people-profile-card__cover-photo org-people-profile-card__cover-photo--people">
+
+                <div class="org-people-profile-card__profile-info">
+                    <div id="ember207" class="artdeco-entity-lockup artdeco-entity-lockup--stacked-center artdeco-entity-lockup--size-7 ember-view">
+                        <div id="ember208" class="artdeco-entity-lockup__image artdeco-entity-lockup__image--type-circle ember-view" type="circle">
+
+                            <a class="app-aware-link " href="https://www.linkedin.com/in/j-kevin-reid-70175979?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABCpubEBZhIKGTpnyQqUT-3v3b1Yo-Y3HqY" data-test-app-aware-link="">
+                                <img width="104" src="https://media.licdn.com/dms/image/C4E03AQH9ztL04Zhy1w/profile-displayphoto-shrink_200_200/0/1516686014104?e=1688601600&amp;v=beta&amp;t=SoEbnG66ZWBvyMAk_VCOqg0t0KJGWX9f08LxgJoRREM" loading="lazy" height="104" alt="J. Kevin Reid’s profile picture"
+                                    id="ember209" class="evi-image lazy-image ember-view">
+                            </a>
+
+
+                        </div>
+                        <div id="ember210" class="artdeco-entity-lockup__content ember-view">
+                            <div id="ember211" class="artdeco-entity-lockup__title ember-view">
+                                <a class="app-aware-link  link-without-visited-state" aria-label="View J. Kevin Reid’s profile" href="https://www.linkedin.com/in/j-kevin-reid-70175979?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABCpubEBZhIKGTpnyQqUT-3v3b1Yo-Y3HqY" data-test-app-aware-link="">
+                                    <div id="ember212" style="" class="ember-view lt-line-clamp lt-line-clamp--single-line org-people-profile-card__profile-title t-black">
+                                        J. Kevin Reid
+
+                                        <!---->
+                                    </div>
+
+                                </a>
+
+                            </div>
+                            <div id="ember213" class="artdeco-entity-lockup__badge ember-view"> <span class="a11y-text">3rd+ degree connection</span>
+                                <span class="artdeco-entity-lockup__degree" aria-hidden="true">
+    ·&nbsp;3rd
+  </span>
+                                <!---->
+                                <!---->
+                            </div>
+                            <div id="ember214" class="artdeco-entity-lockup__subtitle ember-view">
+                                <div class="t-14 t-black--light t-normal">
+                                    <div id="ember215" style="-webkit-line-clamp: 2" class="ember-view lt-line-clamp lt-line-clamp--multi-line">
+                                        Chief Information Officer (CIO) and Senior Executive Vice President at Fusion Technology LLC
+
+                                        <!---->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="ember216" class="artdeco-entity-lockup__caption ember-view"></div>
+                        </div>
+
+                    </div>
+                    <span class="text-align-center">
+            <span id="ember217" style="-webkit-line-clamp: 3" class="ember-view lt-line-clamp lt-line-clamp--multi-line t-12 t-black--light mt2">
+      <span class="lt-line-clamp__raw-line"></span>
+
+                    <!---->
+                    </span>
+
+                    </span>
+                </div>
+
+                <footer class="ph3 pb3">
+
+                    <div class="entry-point">
+                        <div></div>
+
+
+                        <button aria-label="Message J. Kevin Reid" id="ember218" class="artdeco-button artdeco-button--2 artdeco-button--secondary ember-view full-width"><!---->
+<span class="artdeco-button__text">
+    Message
+</span></button>
+
+                    </div>
+                </footer>
+            </section>
+
+        </div>
+
+    </li>
+    <!---->
+    <li class="grid grid__col--lg-8 block
+              pt5 pr4 m0">
+        <div>
+
+            <section id="ember219" class="artdeco-card artdeco-card--with-hover ember-view full-width org-people-profile-card">
+                <!---->
+
+                <img width="210" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" ariarole="presentation" loading="lazy" height="210" alt="" id="ember220" class="evi-image lazy-image ghost-default ember-view org-people-profile-card__cover-photo org-people-profile-card__cover-photo--people">
+
+                <div class="org-people-profile-card__profile-info">
+                    <div id="ember221" class="artdeco-entity-lockup artdeco-entity-lockup--stacked-center artdeco-entity-lockup--size-7 ember-view">
+                        <div id="ember222" class="artdeco-entity-lockup__image artdeco-entity-lockup__image--type-circle ember-view" type="circle">
+
+                            <a class="app-aware-link " href="https://www.linkedin.com/in/dddixon?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAElHF8BlhowpzVd1595BnUdxklwTYJVIgg" data-test-app-aware-link="">
+                                <img width="104" src="https://media.licdn.com/dms/image/C4E03AQHie3f520RJ4Q/profile-displayphoto-shrink_200_200/0/1517687296806?e=1688601600&amp;v=beta&amp;t=cq4lBIPGA65OkF9tWBoqpGgku94g__RXOyJgzvowdv8" loading="lazy" height="104" alt="Daryl Dixon’s profile picture"
+                                    id="ember223" class="evi-image lazy-image ember-view">
+                            </a>
+
+
+                        </div>
+                        <div id="ember224" class="artdeco-entity-lockup__content ember-view">
+                            <div id="ember225" class="artdeco-entity-lockup__title ember-view">
+                                <a class="app-aware-link  link-without-visited-state" aria-label="View Daryl Dixon’s profile" href="https://www.linkedin.com/in/dddixon?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAElHF8BlhowpzVd1595BnUdxklwTYJVIgg" data-test-app-aware-link="">
+                                    <div id="ember226" style="" class="ember-view lt-line-clamp lt-line-clamp--single-line org-people-profile-card__profile-title t-black">
+                                        Daryl Dixon
+
+                                        <!---->
+                                    </div>
+
+                                </a>
+
+                            </div>
+                            <div id="ember227" class="artdeco-entity-lockup__badge ember-view"> <span class="a11y-text">2nd degree connection</span>
+                                <span class="artdeco-entity-lockup__degree" aria-hidden="true">
+    ·&nbsp;2nd
+  </span>
+                                <!---->
+                                <!---->
+                            </div>
+                            <div id="ember228" class="artdeco-entity-lockup__subtitle ember-view">
+                                <div class="t-14 t-black--light t-normal">
+                                    <div id="ember229" style="-webkit-line-clamp: 2" class="ember-view lt-line-clamp lt-line-clamp--multi-line">
+                                        CSO &amp; President at Fusion Technology LLC
+
+                                        <!---->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="ember230" class="artdeco-entity-lockup__caption ember-view"></div>
+                        </div>
+
+                    </div>
+                    <span class="text-align-center">
+            <span id="ember231" style="-webkit-line-clamp: 3" class="ember-view lt-line-clamp lt-line-clamp--multi-line t-12 t-black--light mt2">
+      <span class="lt-line-clamp__raw-line"></span>
+
+                    <!---->
+                    </span>
+
+                    </span>
+                </div>
+
+                <footer class="ph3 pb3">
+                    <button aria-label="Connect Daryl Dixon" id="ember232" class="artdeco-button artdeco-button--2 artdeco-button--secondary ember-view full-width" type="button"><!---->
+<span class="artdeco-button__text">
+    Connect
+</span></button>
+                </footer>
+            </section>
+
+        </div>
+
+    </li>
+    <!---->
+    <li class="grid grid__col--lg-8 block
+              pt5 pr4 m0">
+        <div>
+
+            <section id="ember233" class="artdeco-card artdeco-card--with-hover ember-view full-width org-people-profile-card">
+                <!---->
+
+                <img width="210" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" ariarole="presentation" loading="lazy" height="210" alt="" id="ember234" class="evi-image lazy-image ghost-default ember-view org-people-profile-card__cover-photo org-people-profile-card__cover-photo--people">
+
+                <div class="org-people-profile-card__profile-info">
+                    <div id="ember235" class="artdeco-entity-lockup artdeco-entity-lockup--stacked-center artdeco-entity-lockup--size-7 ember-view">
+                        <div id="ember236" class="artdeco-entity-lockup__image artdeco-entity-lockup__image--type-circle ember-view" type="circle">
+
+                            <a class="app-aware-link " href="https://www.linkedin.com/in/howard-beckwith-b718295?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAEDFUUBb3TOyfirCWkSAjdfyeWQy-6dUtM" data-test-app-aware-link="">
+                                <img width="104" src="https://media.licdn.com/dms/image/C4E03AQFpxWMpZS627Q/profile-displayphoto-shrink_200_200/0/1517760452039?e=1688601600&amp;v=beta&amp;t=od7F5-K5JjXZ5UZZ8rv-hcozVrzoLB5-G_FPxCFbMRE" loading="lazy" height="104" alt="Howard Beckwith’s profile picture"
+                                    id="ember237" class="evi-image lazy-image ember-view">
+                            </a>
+
+
+                        </div>
+                        <div id="ember238" class="artdeco-entity-lockup__content ember-view">
+                            <div id="ember239" class="artdeco-entity-lockup__title ember-view">
+                                <a class="app-aware-link  link-without-visited-state" aria-label="View Howard Beckwith’s profile" href="https://www.linkedin.com/in/howard-beckwith-b718295?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAEDFUUBb3TOyfirCWkSAjdfyeWQy-6dUtM" data-test-app-aware-link="">
+                                    <div id="ember240" style="" class="ember-view lt-line-clamp lt-line-clamp--single-line org-people-profile-card__profile-title t-black">
+                                        Howard Beckwith
+
+                                        <!---->
+                                    </div>
+
+                                </a>
+
+                            </div>
+                            <div id="ember241" class="artdeco-entity-lockup__badge ember-view"> <span class="a11y-text">3rd+ degree connection</span>
+                                <span class="artdeco-entity-lockup__degree" aria-hidden="true">
+    ·&nbsp;3rd
+  </span>
+                                <!---->
+                                <!---->
+                            </div>
+                            <div id="ember242" class="artdeco-entity-lockup__subtitle ember-view">
+                                <div class="t-14 t-black--light t-normal">
+                                    <div id="ember243" style="-webkit-line-clamp: 2" class="ember-view lt-line-clamp lt-line-clamp--multi-line">
+                                        Chief Information Security Officer at Fusion Technology LLC
+
+                                        <!---->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="ember244" class="artdeco-entity-lockup__caption ember-view"></div>
+                        </div>
+
+                    </div>
+                    <span class="text-align-center">
+            <span id="ember245" style="-webkit-line-clamp: 3" class="ember-view lt-line-clamp lt-line-clamp--multi-line t-12 t-black--light mt2">
+      <span class="lt-line-clamp__raw-line"></span>
+
+                    <!---->
+                    </span>
+
+                    </span>
+                </div>
+
+                <footer class="ph3 pb3">
+
+                    <div class="entry-point">
+                        <div></div>
+
+
+                        <button aria-label="Message Howard Beckwith" id="ember246" class="artdeco-button artdeco-button--2 artdeco-button--secondary ember-view full-width"><!---->
+<span class="artdeco-button__text">
+    Message
+</span></button>
+
+                    </div>
+                </footer>
+            </section>
+
+        </div>
+
+    </li>
+    <!---->
+    <li class="grid grid__col--lg-8 block
+              pt5 pr4 m0">
+        <div>
+
+            <section id="ember247" class="artdeco-card artdeco-card--with-hover ember-view full-width org-people-profile-card">
+                <!---->
+
+                <img width="210" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" ariarole="presentation" loading="lazy" height="210" alt="" id="ember248" class="evi-image lazy-image ghost-default ember-view org-people-profile-card__cover-photo org-people-profile-card__cover-photo--people">
+
+                <div class="org-people-profile-card__profile-info">
+                    <div id="ember249" class="artdeco-entity-lockup artdeco-entity-lockup--stacked-center artdeco-entity-lockup--size-7 ember-view">
+                        <div id="ember250" class="artdeco-entity-lockup__image artdeco-entity-lockup__image--type-circle ember-view" type="circle">
+
+                            <a class="app-aware-link " href="https://www.linkedin.com/in/tina-kemp-b028889?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAG7NDIB0_ojSboXp11w_obSI-0_uATj5-M" data-test-app-aware-link="">
+                                <img width="104" src="https://media.licdn.com/dms/image/C5603AQGl5oQ9fJvKzA/profile-displayphoto-shrink_200_200/0/1517668560079?e=1688601600&amp;v=beta&amp;t=sIdsQixRPxmKP5vEBQemeYrwupdgUfBAYVBaLP87Jl0" loading="lazy" height="104" alt="Tina Kemp’s profile picture"
+                                    id="ember251" class="evi-image lazy-image ember-view">
+                            </a>
+
+
+                        </div>
+                        <div id="ember252" class="artdeco-entity-lockup__content ember-view">
+                            <div id="ember253" class="artdeco-entity-lockup__title ember-view">
+                                <a class="app-aware-link  link-without-visited-state" aria-label="View Tina Kemp’s profile" href="https://www.linkedin.com/in/tina-kemp-b028889?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAG7NDIB0_ojSboXp11w_obSI-0_uATj5-M" data-test-app-aware-link="">
+                                    <div id="ember254" style="" class="ember-view lt-line-clamp lt-line-clamp--single-line org-people-profile-card__profile-title t-black">
+                                        Tina Kemp
+
+                                        <!---->
+                                    </div>
+
+                                </a>
+
+                            </div>
+                            <div id="ember255" class="artdeco-entity-lockup__badge ember-view"> <span class="a11y-text">3rd+ degree connection</span>
+                                <span class="artdeco-entity-lockup__degree" aria-hidden="true">
+    ·&nbsp;3rd
+  </span>
+                                <!---->
+                                <!---->
+                            </div>
+                            <div id="ember256" class="artdeco-entity-lockup__subtitle ember-view">
+                                <div class="t-14 t-black--light t-normal">
+                                    <div id="ember257" style="-webkit-line-clamp: 2" class="ember-view lt-line-clamp lt-line-clamp--multi-line">
+                                        FSO/Senior Administrator at Fusion Technology LLC
+
+                                        <!---->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="ember258" class="artdeco-entity-lockup__caption ember-view"></div>
+                        </div>
+
+                    </div>
+                    <span class="text-align-center">
+            <span id="ember259" style="-webkit-line-clamp: 3" class="ember-view lt-line-clamp lt-line-clamp--multi-line t-12 t-black--light mt2">
+      <span class="lt-line-clamp__raw-line"></span>
+
+                    <!---->
+                    </span>
+
+                    </span>
+                </div>
+
+                <footer class="ph3 pb3">
+
+                    <div class="entry-point">
+                        <div></div>
+
+
+                        <button aria-label="Message Tina Kemp" id="ember260" class="artdeco-button artdeco-button--2 artdeco-button--secondary ember-view full-width"><!---->
+<span class="artdeco-button__text">
+    Message
+</span></button>
+
+                    </div>
+                </footer>
+            </section>
+
+        </div>
+
+    </li>
+    <!---->
+    <li class="grid grid__col--lg-8 block
+              pt5 pr4 m0">
+        <div>
+
+            <section id="ember261" class="artdeco-card artdeco-card--with-hover ember-view full-width org-people-profile-card">
+                <!---->
+
+                <img width="210" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" ariarole="presentation" loading="lazy" height="210" alt="" id="ember262" class="evi-image lazy-image ghost-default ember-view org-people-profile-card__cover-photo org-people-profile-card__cover-photo--people">
+
+                <div class="org-people-profile-card__profile-info">
+                    <div id="ember263" class="artdeco-entity-lockup artdeco-entity-lockup--stacked-center artdeco-entity-lockup--size-7 ember-view">
+                        <div id="ember264" class="artdeco-entity-lockup__image artdeco-entity-lockup__image--type-circle ember-view" type="circle">
+
+                            <a class="app-aware-link " href="https://www.linkedin.com/in/vanessa-adams-83505192?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABOVgGkBuxUO0yV7a1_cK_usPFIhJDMqfpk" data-test-app-aware-link="">
+                                <img width="104" src="https://media.licdn.com/dms/image/C4D03AQEJDw4pugjb0A/profile-displayphoto-shrink_200_200/0/1561651343791?e=1688601600&amp;v=beta&amp;t=qx3UPzCVzuBlpf9PhcLBLO-Bk1xsYeZSuxXW_aCbTmQ" loading="lazy" height="104" alt="Vanessa Adams’ profile picture"
+                                    id="ember265" class="evi-image lazy-image ember-view">
+                            </a>
+
+
+                        </div>
+                        <div id="ember266" class="artdeco-entity-lockup__content ember-view">
+                            <div id="ember267" class="artdeco-entity-lockup__title ember-view">
+                                <a class="app-aware-link  link-without-visited-state" aria-label="View Vanessa Adams’ profile" href="https://www.linkedin.com/in/vanessa-adams-83505192?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABOVgGkBuxUO0yV7a1_cK_usPFIhJDMqfpk" data-test-app-aware-link="">
+
+                                    <div class="entry-point">
+                                        <div></div>
+
+
+                                        <button aria-label="Message Vanessa Adams" id="ember274" class="artdeco-button artdeco-button--2 artdeco-button--secondary ember-view full-width"><!---->
+<span class="artdeco-button__text">
+    Message
+</span></button>
+
+                                    </div>
+                                    </footer>
+            </section>
+
+            </div>
+
+    </li>
+</ul>

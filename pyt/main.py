@@ -7,24 +7,33 @@ from selenium_pro import webdriver
 from selenium_pro.webdriver.support.ui import WebDriverWait
 from selenium_pro.webdriver.support import expected_conditions as EC
 from selenium_pro.webdriver.common.by import By
- 
+
 driver = webdriver.Start()
-# driver.get('https://www.linkedin.com/jobs/search/?keywords=cyber%20security%20analyst')
-# driver.find_element_by_pro('76KNymy0OD1r15G').click_pro()
-# src = driver.find_element_by_class_name('jobs-search__results-list').get_attribute('innerHTML')
-# with open("keyword.txt",'w') as f:
-#   f.write(src)
-
-
+driverkeyword = webdriver.Start()
  
+driver.get('https://www.linkedin.com')
+driver.find_element_by_pro('xcoJPARJg9creFi').click_pro()
+driver.find_element_by_pro('ISw3KbGf_HX0PLb').type('mailsofmanisha@yahoo.com')
+driver.switch_to.active_element.type('Tab')
+driver.find_element_by_pro('bWpxjgudeyUVu7V').type('Anupam@294')    
+driver.switch_to.active_element.type('Enter') 
 
+from flask import Flask, request, jsonify
 
-with open('keyword.txt') as f:
-    src = f.read()   
+app = Flask(__name__)
+
+@app.route('/', methods=['GET'])  
+def foo():
+    search = request.args.get("keyword")
+    url = "https://www.linkedin.com/jobs/search/?keywords="+str(search) 
+    driverkeyword.get(url)
+    driverkeyword.find_element_by_pro('76KNymy0OD1r15G').click_pro()
+    src = driverkeyword.find_element_by_class_name('jobs-search__results-list').get_attribute('innerHTML')
+
     soup = BeautifulSoup(src, 'html.parser')
     
     jobs = []
-    for li in soup.find_all('li'):
+    for li in soup.find_all('li',limit=2):
        
         imgsrc =  li.find( 'img' , {'class': 'artdeco-entity-image'})
         time_tag =  li.find('time', {'class': 'job-search-card__listdate'})
@@ -44,12 +53,6 @@ with open('keyword.txt') as f:
          'link': parsed_url.scheme + '://' + parsed_url.netloc + parsed_url.path
         }
         jobs.append(job)
-        driver.get('https://www.linkedin.com')
-        driver.find_element_by_pro('xcoJPARJg9creFi').click_pro()
-        driver.find_element_by_pro('ISw3KbGf_HX0PLb').type('mailsofmanisha@yahoo.com')
-        driver.switch_to.active_element.type('Tab')
-        driver.find_element_by_pro('bWpxjgudeyUVu7V').type('Anupam@294')    
-        driver.switch_to.active_element.type('Enter') 
         for obj in jobs:
             driver.get(obj['link']) 
             element = WebDriverWait(driver, 10).until(
@@ -121,7 +124,7 @@ with open('keyword.txt') as f:
             obj['peoples'] = ceos
 
 
-    print(jobs) 
-    with open("jobwithlink.txt",'w') as f: 
-     f.write(str(jobs))
-         
+    return jobs
+
+if __name__ == '__main__':
+ app.run(debug=False, port=8001)
