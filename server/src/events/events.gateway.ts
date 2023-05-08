@@ -20,11 +20,25 @@ import {
   
     @SubscribeMessage('events')
     findAll(@MessageBody() data: any): Observable<WsResponse<number>> {
+
+      setInterval(()=>{
+
+     
+        this.server.emit("events" , "ok")
+
+      },1000)
+
+      this.server.on('events', function(data) {
+        console.log('eventsdfsdf', data);
+    });
+
       return from([1, 2, 3]).pipe(map(item => ({ event: 'events', data: item })));
     }
   
     @SubscribeMessage('identity')
     async identity(@MessageBody() data: number): Promise<number> {
+
+      console.log(data)
       return data;
     }
   }
