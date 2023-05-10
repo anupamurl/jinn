@@ -29,7 +29,22 @@ export const articlesAPI = createApi({
         method: 'GET',
       }),
     }),
+   search: build.mutation<any, any>({
+      query: ({   keyword, people , limit , linkedindata ,facebook , google , btob  }) => ({
+        url: `search`,
+        method: 'POST',
+        body: { keyword, people , limit  , linkedindata , facebook , google , btob },
+      }),
+    }),
   }),
 })
 
-export const { useGetAllArticlesMutation, useGetMyArticlesMutation } = articlesAPI
+export const { 
+
+  useGetAllArticlesMutation, 
+  useGetMyArticlesMutation,
+  useSearchMutation
+
+} = articlesAPI
+
+ 

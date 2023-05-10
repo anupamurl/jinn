@@ -26,7 +26,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React Redux App</title>
-
+    <!-- 
     <script src="https://cdn.socket.io/4.3.2/socket.io.min.js" integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs" crossorigin="anonymous"></script>
     <script>
         const socket = io('http://localhost:3100');
@@ -37,11 +37,11 @@
                 test: 'test'
             });
 
-            setInterval(() => {
-                socket.emit('identity', 0, response =>
-                    console.log('Identity:', response),
-                );
-            }, 2000);
+            // setInterval(() => {
+            //     socket.emit('identity', Date.now(), response =>
+            //         console.log(Date.now(), response),
+            //     );
+            // }, 2000);
 
         });
 
@@ -58,7 +58,7 @@
         socket.on('disconnect', function() {
             console.log('Disconnected');
         });
-    </script>
+    </script> -->
 </head>
 
 <body>

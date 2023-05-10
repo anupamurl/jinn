@@ -21,24 +21,23 @@ import {
     @SubscribeMessage('events')
     findAll(@MessageBody() data: any): Observable<WsResponse<number>> {
 
-      setInterval(()=>{
+      // setInterval(()=>{
 
      
-        this.server.emit("events" , "ok")
+      //   this.server.emit("events" , "ok")
 
-      },1000)
+      // },1000)
 
-      this.server.on('events', function(data) {
-        console.log('eventsdfsdf', data);
-    });
+    
 
-      return from([1, 2, 3]).pipe(map(item => ({ event: 'events', data: item })));
+      return from([1]).pipe(map(item => ({ event: 'events', data: item })));
     }
   
     @SubscribeMessage('identity')
     async identity(@MessageBody() data: number): Promise<number> {
 
-      console.log(data)
+ 
+            this.server.emit("events" ,  data )
       return data;
     }
   }

@@ -9,6 +9,9 @@ from selenium_pro.webdriver.support import expected_conditions as EC
 from selenium_pro.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 import time
+import socketio
+sio = socketio.Client()
+sio.connect('http://localhost:3100')
 driver = webdriver.Start()
 driverkeyword = webdriver.Start()
  
@@ -25,6 +28,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])  
 def foo():
+    print('request start')
     search = request.args.get("keyword")
     limitdata  =  request.args.get("limit" ,  type=int)  
     peoplekeyword = request.args.get("people")  
@@ -48,7 +52,7 @@ def foo():
         parsed_url = urlparse( li.find('a', {'class': 'base-card__full-link'}).get('href')  )
         query_dict = parse_qs(parsed_url.query)    
         job = {           
-        'jobtitle': li.find('span', {'class': 'sr-only'}).text.strip(),
+        'jobtitle': li.find('h3', {'class': 'base-search-card__title'}).text.strip(),
         'cname': li.find( 'a' , {'class': 'hidden-nested-link'}).text.strip(),
         'clogo':  imgsrc.get('src')  , 
         'location':  li.find('span', {'class': 'job-search-card__location'}).text.strip(), 
@@ -63,7 +67,11 @@ def foo():
             )            
             jobsrc  = driver.find_element_by_class_name('jobs-unified-top-card').get_attribute('innerHTML')                      
             jobsoup = BeautifulSoup(jobsrc, 'html.parser')
+
+            aboutjobsrc  = driver.find_element_by_class_name('jobs-description__content').get_attribute('innerHTML')                      
+            aboutjobsoup = BeautifulSoup(aboutjobsrc, 'html.parser')   
             obj['companylink']  = jobsoup.find_all('a')[0].get("href")
+            obj['aboutjob']  = aboutjobsoup.find_all('span')[0].getText()
             ul_elements = jobsoup.find_all('ul')
             li_texts = []
             for ul in ul_elements:
@@ -123,10 +131,19 @@ def foo():
                 for li in ceobox.find_all('li'):
                  info = { }      
                  people = li.find( class_ = "org-people-profile-card__profile-title" ) 
+                 peoplesubtitle = li.find( class_ = "artdeco-entity-lockup__subtitle" ) 
+                 
                  if people is not None:
                         info['name'] = people.text.strip()
                  else:
                         info['name'] = "No Data Found"  
+
+                 if peoplesubtitle is not None:
+                        info['subtitle'] = peoplesubtitle.text.strip()
+                 else:
+                        info['subtitle'] = "No Data Found"         
+                 info['phone'] = "XXXXXXXXXXXXX"
+                 info['email'] = "XXXXXXXXXXXXX"
 
                  linkedlink = li.find( class_ = "app-aware-link" ) 
                  if linkedlink is not None:
@@ -137,9 +154,10 @@ def foo():
                 ceos.append(info)
                 obj['peoples'] = ceos
             else:
-                obj['peoples'] = "No Record Found"     
+                obj['peoples'] = "No Record Found"    
 
-            print(f"data is ready for {obj['cname']}")
+            print(f"data is ready for  {obj['cname']}")
+            sio.emit('identity',  obj )
             
     return jobs
 

@@ -16,9 +16,14 @@ exports.ArticlesController = void 0;
 const common_1 = require("@nestjs/common");
 const jwt_auth_guard_1 = require("../auth/guards/jwt-auth.guard");
 const articles_service_1 = require("./articles.service");
+const events_gateway_1 = require("../events/events.gateway");
+const websockets_1 = require("@nestjs/websockets");
+const socket_io_1 = require("socket.io");
 let ArticlesController = class ArticlesController {
-    constructor(articlesService) {
+    constructor(articlesService, EventsGateway, httpService) {
         this.articlesService = articlesService;
+        this.EventsGateway = EventsGateway;
+        this.httpService = httpService;
     }
     getAllArticles() {
         console.log(`[ArticlesController] getAllArticles`);
@@ -28,7 +33,16 @@ let ArticlesController = class ArticlesController {
         console.log(`[ArticlesController] getMyArticles`, req.user.email);
         return this.articlesService.findByOwnerEmail(req.user.email);
     }
+    searchData(req) {
+        console.log(`[ArticlesController] getMyArticles`, req.body);
+        return this.httpService.get('http://127.0.0.1:8001?keyword=' + req.body.keyword);
+        return "data";
+    }
 };
+__decorate([
+    (0, websockets_1.WebSocketServer)(),
+    __metadata("design:type", socket_io_1.Server)
+], ArticlesController.prototype, "server", void 0);
 __decorate([
     (0, common_1.Get)('all'),
     __metadata("design:type", Function),
@@ -43,9 +57,18 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], ArticlesController.prototype, "getMyArticles", null);
+__decorate([
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
+    (0, common_1.Post)('search'),
+    __param(0, (0, common_1.Req)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], ArticlesController.prototype, "searchData", null);
 ArticlesController = __decorate([
     (0, common_1.Controller)('article'),
-    __metadata("design:paramtypes", [articles_service_1.ArticlesService])
+    __metadata("design:paramtypes", [articles_service_1.ArticlesService, events_gateway_1.EventsGateway,
+        common_1.HttpService])
 ], ArticlesController);
 exports.ArticlesController = ArticlesController;
 //# sourceMappingURL=articles.controller.js.map

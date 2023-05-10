@@ -10,10 +10,12 @@ exports.ArticlesModule = void 0;
 const common_1 = require("@nestjs/common");
 const articles_controller_1 = require("./articles.controller");
 const articles_service_1 = require("./articles.service");
+const events_module_1 = require("../events/events.module");
 let ArticlesModule = class ArticlesModule {
 };
 ArticlesModule = __decorate([
     (0, common_1.Module)({
+        imports: [events_module_1.EventsModule, common_1.HttpModule],
         controllers: [articles_controller_1.ArticlesController],
         providers: [articles_service_1.ArticlesService],
         exports: [articles_service_1.ArticlesService],
