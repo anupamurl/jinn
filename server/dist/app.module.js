@@ -12,11 +12,17 @@ const articles_module_1 = require("./articles/articles.module");
 const auth_module_1 = require("./auth/auth.module");
 const users_module_1 = require("./users/users.module");
 const events_module_1 = require("./events/events.module");
+const path_1 = require("path");
+const serve_static_1 = require("@nestjs/serve-static");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [auth_module_1.AuthModule, users_module_1.UsersModule, articles_module_1.ArticlesModule, events_module_1.EventsModule],
+        imports: [auth_module_1.AuthModule, users_module_1.UsersModule, articles_module_1.ArticlesModule, events_module_1.EventsModule,
+            serve_static_1.ServeStaticModule.forRoot({
+                rootPath: (0, path_1.join)(__dirname, '../..', 'client/build'),
+            }),
+        ],
         controllers: [],
         providers: [],
     })

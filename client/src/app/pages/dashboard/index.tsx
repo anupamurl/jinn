@@ -231,7 +231,7 @@ btob : boolean
                     <div className="index_heading_div">
                         <h3 className="heading_color">Transactional</h3>
                         <div className="position-relative">
-                            <span className="ps-2 text-white digitdownload">{peopleData.length}</span>
+                            <span className="ps-2 text-white digitdownload">{peopleData.length-1}</span>
                             <span className="downloaddigi"><img src="image/download.svg" alt="" height="15"
                                 width="15" /></span>
                         </div>
@@ -270,7 +270,7 @@ btob : boolean
                     <div className="index_heading_div">
                         <h3 className="heading_color">Navigational</h3>
                         <div className="position-relative ">
-                            <span className="ps-2 text-white digitdownload">{peopleData.length}</span>
+                            <span className="ps-2 text-white digitdownload">{peopleData.length-1}</span>
                             <span className="downloaddigi"><img src="image/download.svg" alt="" height="15"
                                 width="15" /></span>
                         </div>

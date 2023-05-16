@@ -19,6 +19,11 @@ const articles_service_1 = require("./articles.service");
 const events_gateway_1 = require("../events/events.gateway");
 const websockets_1 = require("@nestjs/websockets");
 const socket_io_1 = require("socket.io");
+const { Configuration, OpenAIApi } = require("openai");
+const configuration = new Configuration({
+    apiKey: `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`,
+});
+const openai = new OpenAIApi(configuration);
 let ArticlesController = class ArticlesController {
     constructor(articlesService, EventsGateway, httpService) {
         this.articlesService = articlesService;
@@ -32,6 +37,33 @@ let ArticlesController = class ArticlesController {
     getMyArticles(req) {
         console.log(`[ArticlesController] getMyArticles`, req.user.email);
         return this.articlesService.findByOwnerEmail(req.user.email);
+    }
+    async openai(req) {
+        try {
+            const response = await openai.createCompletion({
+                model: "text-davinci-003",
+                prompt: `Read this article: https://peping.in/blog/home-remedies-for-indigestion-the-ultimate-guide/
+Write summery as human
+Write Key points.
+Find top SEO keywords
+Find 10  Keyword Density`,
+                temperature: 0.7,
+                max_tokens: 256,
+                top_p: 1,
+                frequency_penalty: 0,
+                presence_penalty: 0,
+            });
+            console.log(response.data.choices[0].text);
+        }
+        catch (error) {
+            if (error.response) {
+                console.log(error.response.status);
+                console.log(error.response.data);
+            }
+            else {
+                console.log(error.message);
+            }
+        }
     }
     searchData(req) {
         console.log(`[ArticlesController] getMyArticles`, req.body);
@@ -57,6 +89,13 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], ArticlesController.prototype, "getMyArticles", null);
+__decorate([
+    (0, common_1.Post)('getopenai'),
+    __param(0, (0, common_1.Req)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], ArticlesController.prototype, "openai", null);
 __decorate([
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, common_1.Post)('search'),

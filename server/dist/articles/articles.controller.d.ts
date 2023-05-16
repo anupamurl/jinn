@@ -10,5 +10,6 @@ export declare class ArticlesController {
     server: Server;
     getAllArticles(): Promise<import("./articles.interface").IArticle[]>;
     getMyArticles(req: any): Promise<import("./articles.interface").IArticle[]>;
+    openai(req: any): Promise<void>;
     searchData(req: any): import("rxjs").Observable<import("axios").AxiosResponse<any>> | "data";
 }

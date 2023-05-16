@@ -4,7 +4,22 @@ import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { ArticlesService } from './articles.service';
 import {EventsGateway} from '../events/events.gateway'
 import { WebSocketServer } from '@nestjs/websockets';
-  import { Server } from 'socket.io';
+import { Server } from 'socket.io';
+
+ 
+
+const { Configuration, OpenAIApi } = require("openai");
+
+const configuration = new Configuration({
+  apiKey: `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`,
+});
+const openai = new OpenAIApi(configuration);
+
+
+  
+  // 
+
+
 @Controller('article')
 export class ArticlesController {
   constructor(private articlesService: ArticlesService , private EventsGateway : EventsGateway ,
@@ -24,6 +39,40 @@ export class ArticlesController {
     console.log(`[ArticlesController] getMyArticles`, req.user.email)
     return this.articlesService.findByOwnerEmail(req.user.email);
   }
+
+
+
+ 
+  @Post('getopenai')
+async  openai(@Req() req) {
+
+
+
+try {
+const response = await openai.createCompletion({
+  model: "text-davinci-003",
+  prompt: `Read this article: https://peping.in/blog/home-remedies-for-indigestion-the-ultimate-guide/
+Write summery as human
+Write Key points.
+Find top SEO keywords
+Find 10  Keyword Density`,
+  temperature: 0.7,
+  max_tokens: 256,
+  top_p: 1,
+  frequency_penalty: 0,
+  presence_penalty: 0,
+});
+  console.log(response.data.choices[0].text);
+} catch (error) {
+  if (error.response) {
+    console.log(error.response.status);
+    console.log(error.response.data);
+  } else {
+    console.log(error.message);
+  }
+}
+  }
+
 
 
   
