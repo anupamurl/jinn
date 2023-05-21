@@ -2,6 +2,8 @@ import Form from 'react-bootstrap/Form'
 import { useAppDispatch } from '../../redux/hooks'
 import { resetState } from '../../redux/slices/auth.slice'
 
+import * as xlsx from "xlsx";
+
 import { socket } from '../../../socket';
 import { useState } from 'react';
 import { Field, Formik } from 'formik';
@@ -10,6 +12,12 @@ import   People   from "./people"
 const Dashboard = () => {
     const [isConnected, setIsConnected] = useState(socket.connected);
     const [fooEvents, setFooEvents] = useState([]);
+    const [excle, setExcle] = useState({
+        "Traditional":"",
+        "Redirection" : "",
+        "Profile" :""
+
+    });
 
  
 
@@ -36,7 +44,46 @@ const Dashboard = () => {
 
         console.log(peopleData)
     };
+    const readUploadFile = (e:any) => {
+        e.preventDefault();
+        var Obj:any = {}
+        if (e.target.files) {
+            const reader = new FileReader();
+            reader.onload = (e:any) => {
+                const data = e.target.result;
+                const workbook = xlsx.read(data, { type: "array" });
+                const sheetName = workbook.SheetNames[0];
+                const worksheet = workbook.Sheets[sheetName];
+                const json = xlsx.utils.sheet_to_json(worksheet);
+                console.log(json);
+                json.forEach((node:any)=>{
+                   if(!("Traditional" in Obj)){
 
+                    Obj['Traditional'] = node['Traditional']
+                    Obj['Redirection'] = node['Redirection']
+                    Obj['Profile'] = node['Profile']
+
+                   }
+                   else{                     
+                        if ( node['Traditional']  ){
+                            Obj['Traditional'] = Obj['Traditional'] + "," +  node['Traditional']  
+                        }
+                        if (node['Redirection']  ){
+                            Obj['Redirection'] = Obj['Redirection'] + "," +  node['Redirection']  
+                        }
+                        if (node['Profile'] ){
+                            Obj['Profile'] = Obj['Profile'] + "," +  node['Profile']  
+                        }                    
+                    }
+
+
+                })
+                
+                setExcle(Obj)
+            };
+            reader.readAsArrayBuffer(e.target.files[0]);
+        }
+    }
 
     socket.on('events', (data) => {
 
@@ -51,8 +98,12 @@ google : boolean ,
 btob : boolean 
 
         }) => {
-        const { keyword, people, limit , linkedindata , facebook , google , btob } = formValue
-        search({ keyword, people, limit , linkedindata , facebook , google , btob })
+        let { keyword, people, limit , linkedindata , facebook , google , btob } = formValue
+        people = excle.Profile
+        keyword = excle.Traditional 
+        let postSearch = excle.Redirection      
+
+       search({ keyword,people , postSearch , limit , linkedindata , facebook , google , btob })
     }
 
     return (
@@ -62,6 +113,18 @@ btob : boolean
                 <div className="single_index_div first_div">
                     <div className="index_heading_div">
                         <h3 className="heading_color">Playground</h3>
+                        <div className="position-relative upload_button">
+                        <span className="input_upload_button"><img src="image/plus_icon.svg" alt="" height="10"
+                                width="10" /></span>
+                        <input type="file"  
+                        
+                         
+                        name="upload"
+                        id="upload"
+                        onChange={readUploadFile}
+                        
+                        />
+                    </div>
                     </div>
 
     <Formik
@@ -77,7 +140,7 @@ btob : boolean
                                 }}
                                 onSubmit={handleSearch}
                             >
-                                {({ handleSubmit }) => (
+                                {({ handleSubmit , setFieldValue   }) => (
 
                                     <Form noValidate onSubmit={handleSubmit}>
                     <div className="index_desc_div">
@@ -85,6 +148,21 @@ btob : boolean
                         <div>
                            
                                         <div className='form_input_div'>
+
+                                     
+
+                                         {   Object.entries(excle).map(function(key,val) {
+    return  <div>
+        <div className="mb-30">
+    <h3 className="text-white pb-10 font-16">{ (key[1])? key[0] : ""}</h3>
+    <p className="light_color_white"> {key[1]}
+ 
+    </p>
+</div></div>
+}) }
+
+
+
                                              <Field   as="textarea"  id="keyword" className="custometexteditor" name="keyword" placeholder="What you want to do today" />
 
                                         </div>

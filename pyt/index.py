@@ -8,6 +8,8 @@ from selenium_pro.webdriver.support.ui import WebDriverWait
 from selenium_pro.webdriver.support import expected_conditions as EC
 from selenium_pro.webdriver.common.by import By
 import numpy as np
+
+# https://www.linkedin.com/search/results/content/?keywords=looking%20for%20ux%20designer&origin=SWITCH_SEARCH_VERTICAL&sid=Hm2
 #driver = webdriver.Start()
 # driver.get('https://www.linkedin.com/jobs/search/?keywords=cyber%20security%20analyst')
 # driver.find_element_by_pro('76KNymy0OD1r15G').click_pro()

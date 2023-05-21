@@ -846,3 +846,7 @@ option:hover {
     line-clamp: 4;
     -webkit-box-orient: vertical;
 }
+
+.position-relative input {
+    max-height: 50px;
+}
