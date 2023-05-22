@@ -11,5 +11,7 @@ export declare class ArticlesController {
     getAllArticles(): Promise<import("./articles.interface").IArticle[]>;
     getMyArticles(req: any): Promise<import("./articles.interface").IArticle[]>;
     openai(req: any): Promise<void>;
-    searchData(req: any): import("rxjs").Observable<import("axios").AxiosResponse<any>> | "data";
+    getUser(postSearch: any): Promise<void>;
+    getkeyword(keyword: any, people: any): Promise<void>;
+    searchData(req: any): Promise<string>;
 }

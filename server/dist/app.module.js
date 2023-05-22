@@ -20,7 +20,7 @@ AppModule = __decorate([
     (0, common_1.Module)({
         imports: [auth_module_1.AuthModule, users_module_1.UsersModule, articles_module_1.ArticlesModule, events_module_1.EventsModule,
             serve_static_1.ServeStaticModule.forRoot({
-                rootPath: (0, path_1.join)(__dirname, '../..', 'client/build'),
+                rootPath: (0, path_1.join)(__dirname, '../', 'build'),
             }),
         ],
         controllers: [],

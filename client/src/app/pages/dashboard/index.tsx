@@ -1,13 +1,11 @@
 import Form from 'react-bootstrap/Form'
 import { useAppDispatch } from '../../redux/hooks'
 import { resetState } from '../../redux/slices/auth.slice'
-
 import * as xlsx from "xlsx";
-
 import { socket } from '../../../socket';
 import { useState } from 'react';
 import { Field, Formik } from 'formik';
-import { useSearchMutation } from '../../services/articles.service'
+import { useSearchMutation    } from '../../services/articles.service'
 import   People   from "./people"
 const Dashboard = () => {
     const [isConnected, setIsConnected] = useState(socket.connected);
@@ -16,19 +14,16 @@ const Dashboard = () => {
         "Traditional":"",
         "Redirection" : "",
         "Profile" :""
-
     });
-
- 
-
     const friendsArray = [
         {
             peoples : [ ]
         }
-
     ];
-    const [peopleData, setPeopleData] = useState(friendsArray);
 
+    const [peopleData, setPeopleData] = useState(friendsArray);
+    const [transactional, setTransactional] = useState<any[]>([]);
+    const [navigational, setNavigational] = useState<any[]>([]);
 
     const [search, { data, error, isLoading }] = useSearchMutation()
     const dispatch = useAppDispatch()
@@ -37,13 +32,24 @@ const Dashboard = () => {
     }
     const handleAddFriend = (d: any) => {
 
-        const newData = [...peopleData] 
-   
-      newData.splice(0,0,d);
+        console.log(d)
+        const newData = [...peopleData]    
+        newData.splice(0,0,d);
         setPeopleData(newData);
-
-        console.log(peopleData)
+        const peoplelist = d.peoples.concat([...transactional])
+        setTransactional(peoplelist)
+         
+        
     };
+
+
+    const handlePeople = (d:any) =>{    
+        const arr: string[] = [];        
+        arr.push(d)
+        const peoplelist = arr.concat([...navigational])
+        setNavigational(peoplelist)
+
+    }
     const readUploadFile = (e:any) => {
         e.preventDefault();
         var Obj:any = {}
@@ -87,7 +93,14 @@ const Dashboard = () => {
 
     socket.on('events', (data) => {
 
-        handleAddFriend(data)
+        if(Object.keys(data).indexOf("comment")<0){
+            handleAddFriend(data)
+        }
+        else{
+
+            handlePeople(data)
+        }
+
     });
 
 
@@ -163,7 +176,7 @@ btob : boolean
 
 
 
-                                             <Field   as="textarea"  id="keyword" className="custometexteditor" name="keyword" placeholder="What you want to do today" />
+                                             
 
                                         </div>
 
@@ -309,7 +322,7 @@ btob : boolean
                     <div className="index_heading_div">
                         <h3 className="heading_color">Transactional</h3>
                         <div className="position-relative">
-                            <span className="ps-2 text-white digitdownload">{peopleData.length-1}</span>
+                            <span className="ps-2 text-white digitdownload">{transactional.length}</span>
                             <span className="downloaddigi"><img src="image/download.svg" alt="" height="15"
                                 width="15" /></span>
                         </div>
@@ -318,20 +331,20 @@ btob : boolean
                      
                                 {
 
-                                            peopleData.map((item, index) => {
-                                                return <div> {
+                                            transactional.map((item:any, index:number) => {
+                                                return <div className="mb-30">
+                                                <h3 className="text-white pb-10 font-16">{item.name}</h3>
+                                                <p className="light_color_white">
+                                                    <div>{item.subtitle}  </div>
+                                                   <div> Phone :  {item.phone} </div>
+                                                    <div>  email :  {item.email} </div>
                                                     
-                                                    (
-                                                     item.peoples &&  item.peoples.length ) ? <People ceo={item.peoples} /> : ""
-                                                    }
-                                                                    
-                                               
+                                                    
+                                                 
 
-                                 
-
-
-
-                                                </div>
+                                                     </p>
+                                                    
+                                            </div>
                                   
                                                                                                 })
                                 
@@ -344,9 +357,49 @@ btob : boolean
 
                     </div>
                 </div>
-                <div className="single_index_div fourth_div">
+                <div className="single_index_div thid_div">
                     <div className="index_heading_div">
                         <h3 className="heading_color">Navigational</h3>
+                        <div className="position-relative">
+                            <span className="ps-2 text-white digitdownload">{navigational.length}</span>
+                            <span className="downloaddigi"><img src="image/download.svg" alt="" height="15"
+                                width="15" /></span>
+                        </div>
+                    </div>
+                    <div className="index_desc_div">
+                     
+                                {
+
+navigational.map((item:any, index:number) => {
+                                                return <div className="mb-30">
+                                                <h3 className="text-white pb-10 font-16">{item.name}</h3>
+                                                <p className="light_color_white">
+                                                    <div>{item.subtitle}  </div>
+                                                   <div> Phone :  {item.phone} </div>
+                                                    <div>  email :  {item.email} </div>
+                                                    
+                                                    
+                                                
+
+                                                     </p>
+                                                    
+                                            </div>
+                                  
+                                                                                                })
+                                
+
+                        }
+
+                        
+                          
+                     
+
+                    </div>
+                </div>
+
+                <div className="single_index_div fourth_div">
+                    <div className="index_heading_div">
+                        <h3 className="heading_color">Company Found</h3>
                         <div className="position-relative ">
                             <span className="ps-2 text-white digitdownload">{peopleData.length-1}</span>
                             <span className="downloaddigi"><img src="image/download.svg" alt="" height="15"

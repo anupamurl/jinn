@@ -10,8 +10,8 @@ from selenium_pro.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 import time
 import socketio
-# sio = socketio.Client()
-# sio.connect('http://localhost:3100')
+sio = socketio.Client()
+sio.connect('http://localhost:3100')
 driver = webdriver.Start()
  
  
@@ -28,10 +28,9 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])  
 def foo():
-    print('request start')
+
     search = request.args.get("keyword")
-    limitdata  =  request.args.get("limit" ,  type=int)  
-    peoplekeyword = request.args.get("people")  
+    print('request start number', search )
     url = "https://www.linkedin.com/search/results/content/?keywords="+str(search)     
     driver.get(url)
     time.sleep(20)
@@ -40,7 +39,7 @@ def foo():
  
     soup = BeautifulSoup(src, 'html.parser')    
     posts = []
-    for li in soup.find_all('li' , limit= limitdata ):    
+    for li in soup.find_all('li' ):    
      
         com = li.find('div', {'class': 'update-components-text'}); 
         if com is not None:
@@ -49,18 +48,44 @@ def foo():
          time.sleep(5)
          peoplesrc = driver.find_element_by_class_name('pv-top-card').get_attribute('innerHTML')
          peoplesoup = BeautifulSoup(peoplesrc, 'html.parser')  
-         userpost = {           
-           'comment': li.find('div', {'class': 'update-components-text'}).text.strip(),
-           'userlink' :  userlink,
-           'username' :  peoplesoup.find('h1', {'class': 'text-heading-xlarge'}).text.strip() ,
-           'designation' :  peoplesoup.find('div', {'class': 'text-body-medium'}).text.strip() ,
-           'company' :  peoplesoup.find('span', {'class': 'pv-text-details__right-panel-item-text'}).text.strip()       ,
-           'location'  :     peoplesoup.find(class_='pv-text-details__left-panel mt2').text.strip()  
-            
-            
-                
+         userpost = {        
+           'email': "xxxxxxxxxxxxxxx",
+           'phone' : "xxxxxxxxxx"
          }
+
+         if  li.find('div', {'class': 'update-components-text'}) is not None:
+               userpost['comment' ] = li.find('div', {'class': 'update-components-text'}).text.strip()
+         else:
+               userpost['comment' ] = ""
+
+         if  userlink is not None:
+               userpost['link' ] = userlink
+         else:
+               userpost['link' ] = ""   
+
+         if  peoplesoup.find('h1', {'class': 'text-heading-xlarge'})  is not None:
+               userpost['name' ] = peoplesoup.find('h1', {'class': 'text-heading-xlarge'}).text.strip()
+         else:
+               userpost['name' ] = ""                        
+
+         if  peoplesoup.find('div', {'class': 'text-body-medium'})  is not None:
+               userpost['subtitle' ] = peoplesoup.find('div', {'class': 'text-body-medium'}).text.strip()
+         else:
+               userpost['subtitle' ] = ""  
+
+         if  peoplesoup.find('span', {'class': 'pv-text-details__right-panel-item-text'}) is not None:
+               userpost['company' ] = peoplesoup.find('span', {'class': 'pv-text-details__right-panel-item-text'}).text.strip() 
+         else:
+               userpost['company' ] = ""  
+
+         if   peoplesoup.find(class_='pv-text-details__left-panel mt2')   is not None:
+               userpost['location' ] =  peoplesoup.find(class_='pv-text-details__left-panel mt2').text.strip() 
+         else:
+               userpost['location' ] = ""           
+         sio.emit('identity',  userpost )
          posts.append(userpost)        
     return posts
-if __name__ == '__main__':
- app.run(debug=False, port=8001)
+if __name__ == '__postbox__':
+ app.run(debug=False, port=8002)
+
+ 

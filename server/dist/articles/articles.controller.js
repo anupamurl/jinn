@@ -65,9 +65,18 @@ Find 10  Keyword Density`,
             }
         }
     }
-    searchData(req) {
+    async getUser(postSearch) {
+        console.log("getUser called");
+        await this.httpService.get('http://127.0.0.1:8001/mainbox?keyword=' + postSearch).toPromise();
+    }
+    async getkeyword(keyword, people) {
+        console.log("getkeyword called");
+        await this.httpService.get('http://127.0.0.1:8001?keyword=' + keyword + '&people=' + people).toPromise();
+    }
+    async searchData(req) {
         console.log(`[ArticlesController] getMyArticles`, req.body);
-        return this.httpService.get('http://127.0.0.1:8001?keyword=' + req.body.keyword);
+        this.getUser(req.body.postSearch);
+        this.getkeyword(req.body.keyword, req.body.people);
         return "data";
     }
 };
@@ -102,7 +111,7 @@ __decorate([
     __param(0, (0, common_1.Req)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], ArticlesController.prototype, "searchData", null);
 ArticlesController = __decorate([
     (0, common_1.Controller)('article'),

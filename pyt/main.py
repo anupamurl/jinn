@@ -14,33 +14,53 @@ sio = socketio.Client()
 sio.connect('http://localhost:3100')
 driver = webdriver.Start()
 driverkeyword = webdriver.Start()
+
+
  
 driver.get('https://www.linkedin.com')
+time.sleep(5)
 driver.find_element_by_pro('xcoJPARJg9creFi').click_pro()
 driver.find_element_by_pro('ISw3KbGf_HX0PLb').type('mailsofmanisha@yahoo.com')
 driver.switch_to.active_element.type('Tab')
 driver.find_element_by_pro('bWpxjgudeyUVu7V').type('Anupam@294')    
 driver.switch_to.active_element.type('Enter') 
 
+
+
+time.sleep(20)
+postdriver = webdriver.Start()
+time.sleep(2)
+postdriver.get('https://www.linkedin.com')
+time.sleep(5)
+postdriver.find_element_by_pro('xcoJPARJg9creFi').click_pro()
+postdriver.find_element_by_pro('ISw3KbGf_HX0PLb').type('mailsofmanisha@yahoo.com')
+postdriver.switch_to.active_element.type('Tab')
+postdriver.find_element_by_pro('bWpxjgudeyUVu7V').type('Anupam@294')    
+postdriver.switch_to.active_element.type('Enter') 
+
+
+
+
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])  
-def foo():
-    print('request start')
-    search = request.args.get("keyword")
-    limitdata  =  request.args.get("limit" ,  type=int)  
-    peoplekeyword = request.args.get("people")  
+
+
+def searchAll(search,peoplekeyword):
+    print("search start for")
+    print(search)
+    print("search end for")    
+
     url = "https://www.linkedin.com/jobs/search/?keywords="+str(search) 
     driverkeyword.get(url)
-    driverkeyword.find_element_by_pro('76KNymy0OD1r15G').click_pro()
+    
     src = driverkeyword.find_element_by_class_name('jobs-search__results-list').get_attribute('innerHTML')
 
     soup = BeautifulSoup(src, 'html.parser')
     
     jobs = []
-    for li in soup.find_all('li',limit= limitdata  ):
+    for li in soup.find_all('li',limit= 5  ):
        
         imgsrc =  li.find( 'img' , {'class': 'artdeco-entity-image'})
         time_tag =  li.find('time', {'class': 'job-search-card__listdate'})
@@ -95,9 +115,9 @@ def foo():
             pelement = WebDriverWait(driver, 10).until(
                       EC.presence_of_element_located((By.TAG_NAME, "p"))
             ) 
-            first_inner_p = srcfile.find('p')
+            first_inner_p = srcfile 
             if first_inner_p is not None:
-              obj['aboutcompany'] = first_inner_p.getText()
+              obj['aboutcompany'] = first_inner_p.find("p").getText()
             else:
              obj['aboutcompany'] = "No Data Found"
             info = srcfile.find("dl" )
@@ -154,12 +174,96 @@ def foo():
                 ceos.append(info)
                 obj['peoples'] = ceos
             else:
-                obj['peoples'] = "No Record Found"    
+                obj['peoples'] = []    
 
             print(f"data is ready for  {obj['cname']}")
             sio.emit('identity',  obj )
             
     return jobs
 
+def searcPost(search):
+    
+  
+    print('request start number', search )
+    url = "https://www.linkedin.com/search/results/content/?keywords="+str(search)     
+    postdriver.get(url)
+    time.sleep(20)
+    src = postdriver.find_element_by_class_name('scaffold-finite-scroll__content').get_attribute('innerHTML')
+     
+ 
+    soup = BeautifulSoup(src, 'html.parser')    
+    posts = []
+    for li in soup.find_all('li' ):    
+     
+        com = li.find('div', {'class': 'update-components-text'}); 
+        if com is not None:
+         userlink = li.find('a', {'class': 'app-aware-link'}).get('href') 
+         postdriver.get(userlink)
+         time.sleep(5)
+         peoplesrc = postdriver.find_element_by_class_name('pv-top-card').get_attribute('innerHTML')
+         peoplesoup = BeautifulSoup(peoplesrc, 'html.parser')  
+         userpost = {        
+           'email': "xxxxxxxxxxxxxxx",
+           'phone' : "xxxxxxxxxx"
+         }
+
+         if  li.find('div', {'class': 'update-components-text'}) is not None:
+               userpost['comment' ] = li.find('div', {'class': 'update-components-text'}).text.strip()
+         else:
+               userpost['comment' ] = ""
+
+         if  userlink is not None:
+               userpost['link' ] = userlink
+         else:
+               userpost['link' ] = ""   
+
+         if  peoplesoup.find('h1', {'class': 'text-heading-xlarge'})  is not None:
+               userpost['name' ] = peoplesoup.find('h1', {'class': 'text-heading-xlarge'}).text.strip()
+         else:
+               userpost['name' ] = ""                        
+
+         if  peoplesoup.find('div', {'class': 'text-body-medium'})  is not None:
+               userpost['subtitle' ] = peoplesoup.find('div', {'class': 'text-body-medium'}).text.strip()
+         else:
+               userpost['subtitle' ] = ""  
+
+         if  peoplesoup.find('span', {'class': 'pv-text-details__right-panel-item-text'}) is not None:
+               userpost['company' ] = peoplesoup.find('span', {'class': 'pv-text-details__right-panel-item-text'}).text.strip() 
+         else:
+               userpost['company' ] = ""  
+
+         if   peoplesoup.find(class_='pv-text-details__left-panel mt2')   is not None:
+               userpost['location' ] =  peoplesoup.find(class_='pv-text-details__left-panel mt2').text.strip() 
+         else:
+               userpost['location' ] = ""           
+         sio.emit('identity',  userpost )
+         posts.append(userpost)        
+    return posts
+ 
+
+@app.route('/', methods=['GET'])  
+def foo():
+    print('request start======================================')
+    search = request.args.get("keyword")     
+    peoplekeyword = request.args.get("people")  
+    for data in search.split(","):
+     print("=====")
+     print(data)
+     print(peoplekeyword)
+     print("=====")
+     searchAll(data,peoplekeyword)
+     
+
+    return "ok"
+
+@app.route('/mainbox', methods=['GET'])  
+def mainbox():    
+    search = request.args.get("keyword").split(",")
+    for s in search:
+      time.sleep(10)
+      print("start search for " , search)
+      searcPost(s)
+    return "ok"
+ 
 if __name__ == '__main__':
  app.run(debug=False, port=8001)
