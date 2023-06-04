@@ -12,41 +12,35 @@ import time
 import socketio
 sio = socketio.Client()
 sio.connect('http://localhost:3100')
-driver = webdriver.Start()
-driverkeyword = webdriver.Start()
+from multiprocessing import Process
+from multiprocessing import parent_process
+import re
 
 
- 
-driver.get('https://www.linkedin.com')
-time.sleep(5)
-driver.find_element_by_pro('xcoJPARJg9creFi').click_pro()
-driver.find_element_by_pro('ISw3KbGf_HX0PLb').type('mailsofmanisha@yahoo.com')
-driver.switch_to.active_element.type('Tab')
-driver.find_element_by_pro('bWpxjgudeyUVu7V').type('Anupam@294')    
-driver.switch_to.active_element.type('Enter') 
+# driver = webdriver.Start()
+# driverkeyword = webdriver.Start() 
+# driver.get('https://www.linkedin.com')
+# time.sleep(5)
+# driver.find_element_by_pro('xcoJPARJg9creFi').click_pro()
+# driver.find_element_by_pro('ISw3KbGf_HX0PLb').type('mailsofmanisha@yahoo.com')
+# driver.switch_to.active_element.type('Tab')
+# driver.find_element_by_pro('bWpxjgudeyUVu7V').type('Anupam@294')    
+# driver.switch_to.active_element.type('Enter') 
 
 
-
-time.sleep(20)
-postdriver = webdriver.Start()
-time.sleep(2)
+postdriver = webdriver.Start() 
 postdriver.get('https://www.linkedin.com')
-time.sleep(5)
+time.sleep(3) 
 postdriver.find_element_by_pro('xcoJPARJg9creFi').click_pro()
-postdriver.find_element_by_pro('ISw3KbGf_HX0PLb').type('mailsofmanisha@yahoo.com')
+postdriver.find_element_by_pro('ISw3KbGf_HX0PLb').type('8595704389')
 postdriver.switch_to.active_element.type('Tab')
-postdriver.find_element_by_pro('bWpxjgudeyUVu7V').type('Anupam@294')    
+postdriver.find_element_by_pro('bWpxjgudeyUVu7V').type('Payal@209')    
 postdriver.switch_to.active_element.type('Enter') 
 
 
 
-
 from flask import Flask, request, jsonify
-
 app = Flask(__name__)
-
-
-
 def searchAll(search,peoplekeyword):
     print("search start for")
     print(search)
@@ -180,16 +174,13 @@ def searchAll(search,peoplekeyword):
             sio.emit('identity',  obj )
             
     return jobs
-
 def searcPost(search):
-    
-  
     print('request start number', search )
-    url = "https://www.linkedin.com/search/results/content/?keywords="+str(search)     
+    url = "https://www.linkedin.com/search/results/content/?keywords=looking for "+str(search)     
     postdriver.get(url)
     time.sleep(20)
     src = postdriver.find_element_by_class_name('scaffold-finite-scroll__content').get_attribute('innerHTML')
-     
+   
  
     soup = BeautifulSoup(src, 'html.parser')    
     posts = []
@@ -197,15 +188,26 @@ def searcPost(search):
      
         com = li.find('div', {'class': 'update-components-text'}); 
         if com is not None:
+       
          userlink = li.find('a', {'class': 'app-aware-link'}).get('href') 
+         usercomment = li.find('div', { 'class' : 'update-components-text' }).text.strip()       
+         timeago =  li.find('div', { 'class' : 'update-components-text-view' }).text.strip()  
+         emails = re.findall(r"[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.[a-z]+", usercomment)
+         phones =  re.findall(r'[\+\(]?[1-9][0-9 .\-\(\)]{8,}[0-9]', usercomment)
+         userpost = {        
+           'email': emails ,
+           'phone' :   phones,
+           'usercomment': usercomment ,
+           'timeago' : timeago
+         }
+ 
+      
+         
          postdriver.get(userlink)
          time.sleep(5)
          peoplesrc = postdriver.find_element_by_class_name('pv-top-card').get_attribute('innerHTML')
          peoplesoup = BeautifulSoup(peoplesrc, 'html.parser')  
-         userpost = {        
-           'email': "xxxxxxxxxxxxxxx",
-           'phone' : "xxxxxxxxxx"
-         }
+
 
          if  li.find('div', {'class': 'update-components-text'}) is not None:
                userpost['comment' ] = li.find('div', {'class': 'update-components-text'}).text.strip()
@@ -237,9 +239,9 @@ def searcPost(search):
          else:
                userpost['location' ] = ""           
          sio.emit('identity',  userpost )
+ 
          posts.append(userpost)        
     return posts
- 
 
 @app.route('/', methods=['GET'])  
 def foo():
@@ -248,16 +250,15 @@ def foo():
     peoplekeyword = request.args.get("people")  
     for data in search.split(","):
      print("=====")
-     print(data)
-     print(peoplekeyword)
-     print("=====")
-     searchAll(data,peoplekeyword)
-     
-
+#      print(data)
+#      print(peoplekeyword)
+#      print("=====")
+#      searchAll(data,peoplekeyword) 
     return "ok"
 
 @app.route('/mainbox', methods=['GET'])  
-def mainbox():    
+def mainbox():
+    search = [];    
     search = request.args.get("keyword").split(",")
     for s in search:
       time.sleep(10)
