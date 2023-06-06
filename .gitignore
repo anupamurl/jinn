@@ -2,3 +2,7 @@ server/node_modules
 server/dist
 client/node_modules
 clientnew/node_modules
+clientnew/build/
+pyt/build/
+pyt/dist/
+pyt/main.spec

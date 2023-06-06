@@ -9,7 +9,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
   imports: [AuthModule, UsersModule, ArticlesModule, EventsModule  ,
   
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '../', 'build'),   // <-- path to the static files
+      rootPath: join(__dirname,'build'),   // <-- path to the static files
     }),
 ]
   ,

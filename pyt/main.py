@@ -32,9 +32,9 @@ postdriver = webdriver.Start()
 postdriver.get('https://www.linkedin.com')
 time.sleep(3) 
 postdriver.find_element_by_pro('xcoJPARJg9creFi').click_pro()
-postdriver.find_element_by_pro('ISw3KbGf_HX0PLb').type('8595704389')
+postdriver.find_element_by_pro('ISw3KbGf_HX0PLb').type('sanjiv686@yahoo.co.uk')  
 postdriver.switch_to.active_element.type('Tab')
-postdriver.find_element_by_pro('bWpxjgudeyUVu7V').type('Payal@209')    
+postdriver.find_element_by_pro('bWpxjgudeyUVu7V').type('Sanica2016@')    
 postdriver.switch_to.active_element.type('Enter') 
 
 
